@@ -1,0 +1,11 @@
+usage: ${BASE_CMD} <command> [<args>]
+version: ${ENVR_VERSION}
+
+Available commands are:
+  switch          Switch the environment
+  save            Save current environment (dependent files)
+  check           Check if an environment exists
+  dump-db         Dump the database for the current environment
+  restore-db      Restore the latest dump the the database
+  normalize-sql   Normalize the last sql dump and prepare it for each environments
+  version         Display the version
