@@ -5,6 +5,11 @@ source ./$SCRIPTS/prepare-environment.sh
 DB_VARIABLES=".db_variables"
 
 
+if [ ! -f $DB_VARIABLES ]; then
+	echo "WARNING: No file $DB_VARIABLES found. No config variables will be replaced in the dump."
+	exit 0
+fi
+
 for VARIABLE_NAME in $(cat $DB_VARIABLES)
 do
 	VALUE=$(eval "echo \$${VARIABLE_NAME}")

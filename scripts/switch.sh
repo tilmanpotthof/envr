@@ -19,13 +19,16 @@ echo $NEW_ENVIRONMENT > $CURRENT_ENVIRONMENT_FILE
 
 source ./$SCRIPTS/prepare-environment.sh
 
-
-for FILEPATH in `cat $ENVIRONMENT_DEPENDENT_FILES`
-do
-	if [ -f $CURRENT_ENVIRONMENT_PATH/$FILEPATH ]; then
-		echo $FILEPATH
-		cp $CURRENT_ENVIRONMENT_PATH/$FILEPATH $FILEPATH
-	else
-		echo "Environment dependent file '$FILEPATH' does not exist for $CURRENT_ENVIRONMENT"
-    fi
-done
+if [ ! -f $ENVIRONMENT_DEPENDENT_FILES ]; then
+	echo "WARNING: No file $ENVIRONMENT_DEPENDENT_FILES found. No files will be copied."
+else
+	for FILEPATH in `cat $ENVIRONMENT_DEPENDENT_FILES`
+	do
+		if [ -f $CURRENT_ENVIRONMENT_PATH/$FILEPATH ]; then
+			echo $FILEPATH
+			cp $CURRENT_ENVIRONMENT_PATH/$FILEPATH $FILEPATH
+		else
+			echo "Environment dependent file '$FILEPATH' does not exist for $CURRENT_ENVIRONMENT"
+	    fi
+	done
+fi
