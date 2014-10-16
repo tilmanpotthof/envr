@@ -5,7 +5,7 @@ BASE_CMD=$1
 COMMAND=$2
 
 export ENVR_VERSION=0.1.0
-export SCRIPTS='scripts/'
+export SCRIPTS=$ENVR_PATH/'scripts/'
 export DOCS=$SCRIPTS'/docs'
 
 EXPECTED_SCRIPT_PATH=$SCRIPTS$COMMAND.sh

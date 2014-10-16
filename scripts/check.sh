@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ./$SCRIPTS/prepare-environment.sh --no-checks
+source $SCRIPTS/prepare-environment.sh --no-checks
 
 ENVIRONMENT_TO_CHECK=$1
 
