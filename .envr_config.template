@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+export ENVR_PATH=\"$ENVR_PATH\"
