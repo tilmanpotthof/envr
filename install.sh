@@ -26,3 +26,9 @@ fi
 
 cp $ENVR_PATH/envr.sh ./
 echo "✓ copied envr script to current directory"
+
+mkdir -p environments
+echo "✓ created environments directory"
+
+cp -r $ENVR_PATH/environments/www.sample-environment.com environments/
+echo "✓ created environment: www.sample-environment.com"
