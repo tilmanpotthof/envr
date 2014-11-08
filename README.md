@@ -24,6 +24,26 @@ Envr automatically replaces variables in you database dump if you want to. You c
     WORDPRESS_URL
     PIWIK_URL
 
+## Directory Structure
+
+Example stucture for a wordpress project.
+
+	environments/
+	├── localhost
+	│   ├── environment-config.sh
+	│   ├── sql
+	│   │   └── latest.sql
+	│   └── wordpress
+	│       └── wp-config.php
+	└── www.sample-environment.com
+	    ├── environment-config.sh
+	    ├── sql
+	    │   └── latest.sql
+	    └── wordpress
+	        └── wp-config.php
+
+
+
 ## Commands
 
     usage: ./envr.sh <command> [<args>]
