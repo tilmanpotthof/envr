@@ -32,3 +32,6 @@ echo "✓ created environments directory"
 
 cp -r $ENVR_PATH/environments/www.sample-environment.com environments/
 echo "✓ created environment: www.sample-environment.com"
+
+touch .environment-dependent-files
+echo "✓ created config: .environment-dependent-files"
