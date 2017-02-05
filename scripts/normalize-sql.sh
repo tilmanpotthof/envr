@@ -65,7 +65,7 @@ do
 	done
 done
 
-rm -r $TMP_PHP_FILE
+rm -f $TMP_PHP_FILE
 
 echo "✓ done creating sql for all environments"
 
