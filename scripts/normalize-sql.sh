@@ -49,7 +49,7 @@ do
 		PLACEHOLDER="{{{$VARIABLE_NAME}}}"
 
 		## step to replace urls that are stores in non-atomic fields with phps serialize function
-		for MATCH in `perl -wnE 'print $_ =~ /(s:[0-9]+:\\\"h?t?t?p?:?\/?\/?'$PLACEHOLDER'.*?\";)/g' $ENVIRONMENT_SQL | perl -pne 's/;s:/;\ns:/g'`
+		for MATCH in `perl -wnE 'print $_ =~ /(s:[0-9]+:\\\"*?'$PLACEHOLDER'.*?\";)/g' $ENVIRONMENT_SQL | perl -pne 's/;s:/;\ns:/g'`
 		do
 			URL=`echo $MATCH | perl -ne '$_ =~ /\\\"(.*)\\\"/g;print $1' | perl -pne 's!'$PLACEHOLDER'!'$VALUE'!g'`
 			REPLACEMENT=$(replace $URL)
